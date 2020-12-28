@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.employee table {
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.employee table td img {
+    max-width: 80px;
+}
+.employee-info {
+    background-color: #e4e4e4;
+    padding: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 7px 4px #bbadad;
+}
+.green, .red {
+    display: inline-block;
+    margin: 10px;
+    color: #fff;
+    padding: 5px;
+}
+.green {
+    background-color: #0c5460;
+}
+.red {
+    background-color: #9f191f;
+}

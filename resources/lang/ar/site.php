@@ -1,0 +1,31 @@
+<?php
+return [
+    "dashboard" => "الرئيسية",
+    "employees" => "الموضفين",
+    "add" => "اضافة",
+    "name" =>"الاسم",
+    "age" =>"العمر",
+    "image" => "صورة",
+    "number_employee" => "رقم الموظف",
+    "email" => "البريد الالكتروني",
+    "login" => "تسجيل الدخول",
+    "address" =>"محل الاقامة",
+    "salary" => "الراتب",
+    "overtime" => "ساعات الاضافي",
+    "overtimeRate" => "حساب الاضافي",
+    "abbsentDays" => "أيام الغياب",
+    "abbsentRate" => "خصم الغياب",
+    "advance" => "سلفة",
+    "insurances" => "التأمينات",
+    "discount" => "الخصم",
+    "total" => "الاجمالي",
+    "no_data" => "لا توجد اي بينات",
+    "status" => "الحالة اليوم",
+    "present" => "حاضر",
+    "absent" => "غائب",
+    "bonuses" => "المكافئات",
+    "addition" => "الاضافي",
+    "tax" => "الضريبة",
+    "date_employment" => "تاريخ التوضيف"
+
+];
