@@ -1,13 +1,35 @@
 .login-admin {
     margin-top: 100px;
-}
+    padding: 10px;
 
+}
 .login-admin form {
     margin: auto;
-    padding: 15px;
-    max-width: 550px;
+    padding: 20px;
+    max-width: 600px;
+    border: 1px solid #eee;
     border-radius: 10px;
     box-shadow: 2px 5px 13px 4px rgba(238, 17, 238, 0.07)
+}
+.section-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section-header .section-title {
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+.section-header .line {
+    display: block;
+    height: 3px;
+    width: 100px;
+    margin: 0 auto;
+    background-color: #0e6efb;
+}
+.login-admin form label {
+    color: #0d6aad;
+    margin: 10px;
 }
 .login-admin form button {
     transition: 0.5s;

@@ -6,7 +6,9 @@
 
             <section class="content-header">
 
-                <h1>@lang('site.dashboard')</h1>
+                <div class="title-top">
+                    <h4>@lang('site.employees')</h4>
+                </div>
 
                 <ol class="breadcrumb">
                     <li><a href="{{ route("dashboard.index") }}"><i class="fa fa-home"></i> @lang('site.dashboard')</a> </li>
@@ -15,7 +17,6 @@
             </section>
 
             <section class="content">
-                t7uy8i9
 
                 <div class="box box-solid">
 
@@ -26,13 +27,24 @@
                             </div>
                             <div class="col-md-6 text-left">
                                 <div class="add-user">
-                                    <button class="btn btn-primary">@lang("site.add") @lang("site.employees")</button>
+                                    <button class="btn btn-primary" disabled>@lang("site.add") @lang("site.employees")</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="box-body border-radius-none">
                       @if ($employees->count() > 0)
+                        <form action="{{ route("dashboard.employees.index") }}" method="get">
+                            @csrf
+                          <div class="col-md-4">
+                            <div class="form-group">
+                               <input class="form-control" type="search" name="search" placeholder="@lang("site.search")" />
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <button class="btn btn-secondary" type="submit"> <i class="fa fa-search"></i> @lang('site.search')</button>
+                           </div>
+                        </form>
                             <table class="table table-hover text-center">
                                 <tbody>
                                 <tr>
@@ -40,12 +52,8 @@
                                     <th>@lang("site.number_employee")</th>
                                     <th>@lang("site.image")</th>
                                     <th>@lang("site.name")</th>
-                                    <th>@lang("site.age")</th>
-                                    <th>@lang("site.address")</th>
-                                    <th>@lang("site.salary")</th>
-                                    <th>@lang("site.overtime")</th>
-                                    <th>@lang("site.tax")</th>
                                     <th>@lang("site.total")</th>
+                                    <th>@lang("site.details")</th>
                                 </tr>
                                 </tbody>
                                 <tbody>
@@ -55,22 +63,20 @@
                                     <td>{{ $employee->number }}</td>
                                     <td><img class="img-thumbnail" src="{{ $employee->image_path }}" alt="@lang("site.name")" /></td>
                                     <td>{{ $employee->name }}</td>
-                                    <td>{{ $employee->age }}</td>
-                                    <td>{{ $employee->address }}</td>
-                                    <td>{{ $employee->salary }} $</td>
-                                    <td>{{ $employee->overtime }} </td>
-                                    <td>{{ $employee->tax }} %</td>
-                                    <td>{{ $employee->calculateTotalSalary() }}</td>
-                                    <td><a href="{{ route("dashboard.employee.show", $employee->id) }}"> انتقل الى</a> </td>
+                                    <td>{{ $employee->total }}</td>
+                                    <td><a class="btn btn-primary" target="_blank" href="{{ route("dashboard.employee.show", $employee->id) }}">@lang("site.moving")</a> </td>
                                 </tr>
                                 @endforeach
+
                                 </tbody>
                             </table>
                         @else
                           <h4 class="alert alert-info text-center">@lang("site.no_data")</h4>
                       @endif
+                      {{ $employees->appends(request()->query())->links() }}
                     </div>
                     <!-- /.box-body -->
+
                 </div>
 
             </section><!-- end of content -->

@@ -16,7 +16,7 @@ class Employee extends Model
 
     }//end of get image path
 
-    public function calculateOvertime() {
+   /* public function calculateOvertime() {
         return $this->overtime * $this->overtimeRate;
     }
     public function calculateAbbsent() {
@@ -24,9 +24,9 @@ class Employee extends Model
     }
     public function calculateTotalSalary() {
         return
-            ($this->salary - ($this->salary * $this->tax)) +
+            ($this->salary - ($this->salary * $this->tax)) + $this->allowances +
             ($this->salary - ($this->salary * $this->insurances)) +
-            $this->calculateOvertime() - $this->calculateAbbsent();
-    }
+            $this->calculateOvertime() - $this->calculateAbbsent() - $this->delay;
+    }*/
 
 }

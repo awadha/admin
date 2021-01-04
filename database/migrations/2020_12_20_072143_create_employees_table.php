@@ -21,16 +21,27 @@ class CreateEmployeesTable extends Migration
             $table->bigInteger('number');
             $table->string("image")->default("default.jpg");
             $table->date("date_employment");
+            //the morning
+            $table->time("attendees");
+            $table->time("leaving");
+            $table->time("leaveEarly");
+            $table->time("late");
+            // Afternoon
+            $table->time("afternoonAttendance");
+            $table->time("afternoonLeaving");
             //cul Salary
             $table->float("salary");
-            $table->smallInteger("overtime");
+            $table->time("overtime");
             $table->float("overtimeRate");
+            $table->integer("allowances");
             $table->enum('absence', ['present', 'absent']);
             $table->smallInteger("abbsentDays");
             $table->float("abbsentRate");
+            $table->integer("delay");
             $table->float("advance");
             $table->float("insurances");
             $table->float("tax");
+            $table->float("total");
             $table->rememberToken();
             $table->timestamps();
         });

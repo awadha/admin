@@ -20,12 +20,14 @@
 <body>
 <div class="login-admin">
     <div class="container">
-
         <form method="POST" action="{{ route('dashboard.login.submit') }}">
-            <h3>@lang("site.login")</h3>
+            <div class="section-header">
+                <h3 class="section-title">@lang("site.login")</h3>
+                <span class="line"></span>
+            </div>
             @csrf
             <div class="mb-3">
-                <label for="email">{{ __('E-Mail Address') }}</label>
+                <label for="email"> {{ __('E-Mail Address') }} :</label>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     @error('email')
@@ -35,9 +37,8 @@
                     @enderror
 
             </div>
-
             <div class="mb-3">
-                <label for="password">{{ __('Password') }}</label>
+                <label for="password">{{ __('Password') }} :</label>
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                            name="password" required autocomplete="current-password">
                     @error('password')
@@ -47,11 +48,8 @@
                     @enderror
             </div>
             <div class="mb-3">
-
-
                         <input class="form-check-input" type="checkbox" name="remember"
                                id="remember" {{ old('remember') ? 'checked' : '' }}>
-
                         <label class="form-check-label" for="remember">
                             {{ __('Remember Me') }}
                         </label>

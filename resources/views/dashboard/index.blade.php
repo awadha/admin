@@ -14,10 +14,7 @@
         </section>
 
         <section class="content">
-            t7uy8i9
-
             <div class="box box-solid">
-
                 <div class="box-header">
                     <h3 class="box-title">Sales Graph</h3>
                 </div>

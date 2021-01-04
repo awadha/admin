@@ -229,12 +229,7 @@
     @include('partials._session')
 
     <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 2.4.0
-        </div>
-        <strong>Copyright &copy; 2014-2016
-            <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-        reserved.
+      جميع الحقوق محفوظة
     </footer>
 
 </div><!-- end of wrapper -->
@@ -270,9 +265,7 @@
 
 <script>
     $(document).ready(function () {
-
         $('.sidebar-menu').tree();
-
         //icheck
         $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
             checkboxClass: 'icheckbox_minimal-blue',

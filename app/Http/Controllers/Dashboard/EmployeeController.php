@@ -12,8 +12,13 @@ class EmployeeController extends Controller
     {
         $this->middleware("auth:admin");
     }
-    public function index() {
-        $employees = Employee::all();
+    public function index(Request $request) {
+        $employees = Employee::when($request->search, function($q) use ($request) {
+
+            return $q->where('name', 'like', '%' . $request->search . '%');
+
+
+        })->latest()->paginate(5);
        return view("dashboard.employees.index", compact("employees"));
     }
     public function show(Employee $employee){
